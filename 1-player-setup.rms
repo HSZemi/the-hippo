@@ -1,0 +1,24 @@
+
+/* 1-player-setup.rms */
+
+
+<PLAYER_SETUP>
+direct_placement
+
+/* creates the villagers from the flags under the TC */
+effect_amount SET_ATTRIBUTE LAZY_VILLAGER ATTR_DEAD_ID 83
+effect_amount SET_ATTRIBUTE LAZY_VILLAGER ATTR_HITPOINTS 0
+
+/* adjust starting resources */
+effect_amount MOD_RESOURCE AMOUNT_STARTING_WOOD ATTR_ADD -30
+effect_amount MOD_RESOURCE AMOUNT_STARTING_FOOD ATTR_ADD -100
+
+/* make the herdable under the TC die and only have 70 food */
+/* note that you should NOT place this herdable type for gaia anywhere else */
+effect_amount GAIA_ADD_ATTRIBUTE HERDABLE_A ATTR_STORAGE_VALUE -30	
+effect_amount GAIA_SET_ATTRIBUTE HERDABLE_A ATTR_HITPOINTS 0
+
+/* revealer line of sight */
+effect_amount SET_ATTRIBUTE EW_REVEALER ATTR_LINE_OF_SIGHT 18
+effect_amount SET_ATTRIBUTE EW_REVEALER ATTR_HITPOINTS 0
+

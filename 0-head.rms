@@ -1,0 +1,28 @@
+/* The Hippo */
+/* created for NAC4 */
+/* by hszemi */
+
+/* use two different different herdables so that you aren't giving all sheep 70 food */
+#const HERDABLE_A 1245 /* Pig */
+#const HERDABLE_B 594 /* Sheep */
+
+/* palceholders used for positioning */
+#const PH_NEUTRAL_OFF 346 /* Off-Grid Object - only used for gaia objects */
+#const PH_PLAYER_OFF 647 /* Off-Grid Object - only used for player objects */
+
+/* used to spawn 6 villagers in exact positions under the TC */
+#const LAZY_VILLAGER 1285 /* FE Flag */
+
+/* used to explore tiles around the TC */
+#const EW_REVEALER 851 /* ES Flag */
+
+#const TERRAIN_BASE 1 /* WATER */
+#const TERRAIN_INNER_MOUTH 62 /* DLC_JUNGLELEAVES */
+#const TERRAIN_MOUTH_OUTLINE 13 /* PALM_DESERT */
+#const TERRAIN_OUTER_BODY 70 /* Gravel */
+#const TERRAIN_RAYS_CORNER 4 /* SHALLOW */
+#const TERRAIN_RAYS_OTHER 1 /* WATER */
+#const TERRAIN_RIDGE 0 /* GRASS */
+#const TERRAIN_TEETH 105 /* DLC_FORESTSNOWAUTUMN */
+
+#define FOLD
