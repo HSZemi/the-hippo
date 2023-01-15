@@ -193,18 +193,84 @@ create_object VILLAGER
 	place_on_forest_zone
 }
 
+
 /* 2 starting houses */
-create_object HOUSE
-{
+create_object FLAG_A {
+	second_object HOUSE
 	set_place_for_every_player
-	number_of_objects 2
-	find_closest
-	max_distance_to_other_zones 4
-	avoid_forest_zone 2
-	min_distance_to_players 7
-	avoid_actor_area 1113
-	min_distance_group_placement 3
+	number_of_groups 2
+	number_of_objects 1
+	terrain_to_place_on TERRAIN_TEETH
+	ignore_terrain_restrictions
+	temp_min_distance_group_placement 10
+	find_closest_to_map_center
 }
+
+create_object STONE {
+	set_gaia_object_only
+	number_of_objects 2
+	number_of_groups 12
+	temp_min_distance_group_placement 8
+	set_tight_grouping
+	avoid_forest_zone 1
+	terrain_to_place_on TERRAIN_OUTER_BODY
+}
+
+
+create_object PH_NEUTRAL_OFF {
+	place_on_specific_land_id 1
+	max_distance_to_players 0
+	actor_area 150
+	actor_area_radius 50
+}
+
+
+create_object PH_NEUTRAL_OFF {
+	place_on_specific_land_id 1
+	max_distance_to_players 0
+	actor_area 120
+	actor_area_radius 20
+}
+
+create_object GOLD {
+	set_gaia_object_only
+	number_of_objects 2
+	number_of_groups 8
+	temp_min_distance_group_placement 8
+	set_tight_grouping
+	avoid_forest_zone 1
+	terrain_to_place_on TERRAIN_INNER_MOUTH
+	avoid_actor_area 120
+	avoid_actor_area 220
+}
+
+
+create_object PH_NEUTRAL_OFF {
+	place_on_specific_land_id 2
+	max_distance_to_players 0
+	actor_area 250
+	actor_area_radius 50
+}
+
+create_object PH_NEUTRAL_OFF {
+	place_on_specific_land_id 2
+	max_distance_to_players 0
+	actor_area 220
+	actor_area_radius 20
+}
+
+create_object GOLD {
+	set_gaia_object_only
+	number_of_objects 2
+	number_of_groups 8
+	temp_min_distance_group_placement 8
+	set_tight_grouping
+	avoid_forest_zone 1
+	terrain_to_place_on TERRAIN_INNER_MOUTH
+	avoid_actor_area 220
+	avoid_actor_area 120
+}
+
 
 create_object RELIC
 {
@@ -230,3 +296,33 @@ create_object RELIC
     find_closest
 }
 
+create_object RELIC
+{
+    set_gaia_object_only
+    number_of_objects 1
+    place_on_specific_land_id 104
+    find_closest
+}
+
+create_object RELIC
+{
+    set_gaia_object_only
+    number_of_objects 1
+    place_on_specific_land_id 105
+    find_closest
+}
+
+create_object SHORE_FISH
+{
+	number_of_objects 1024
+	min_distance_group_placement 4
+	terrain_to_place_on WATER
+}
+
+create_object MARLIN1
+{
+	number_of_objects 1024
+	set_gaia_object_only
+	min_distance_group_placement 6
+	terrain_to_place_on WATER
+}

@@ -1,9 +1,12 @@
 default: 0-head.rms 1-player-setup.rms 2-land-generation.rms 3-elevation-generation.rms 4-cliff-generation.rms 5-terrain-generation.rms 6-connection-generation.rms 7-objects-generation.rms
 	cat $+ > the-hippo.rms
 
-#inner-mouth.rms: venv inner-mouth.png
-#	. venv/bin/activate
-#	./image-to-lands.py inner-mouth.png TERRAIN_INNER_MOUTH 1 > $@
+install: the-hippo.rms
+	cp the-hippo.rms ~/aoe/aoe2mods/local/map_test/resources/_common/random-map-scripts/
+
+# inner-mouth-2.rms: venv inner-mouth.png
+# 	. venv/bin/activate
+# 	./image-to-lands.py inner-mouth.png TERRAIN_INNER_MOUTH 1 > $@
 
 mouth-outline.rms: venv mouth-outline.png
 	. venv/bin/activate
@@ -16,6 +19,10 @@ outer-body.rms: venv outer-body.png
 rays-corner.rms: venv rays-corner.png
 	. venv/bin/activate
 	./image-to-lands.py rays-corner.png TERRAIN_RAYS_CORNER 2 > $@
+	sed -i $@ -e 's/5 5/5 5\n  land_id 102/'
+	sed -i $@ -e 's/96 96/96 96\n  land_id 103/'
+	sed -i $@ -e 's/5 96/5 96\n  land_id 104/'
+	sed -i $@ -e 's/96 5/96 5\n  land_id 105/'
 
 rays-other.rms: venv rays-other.png
 	. venv/bin/activate
@@ -24,9 +31,7 @@ rays-other.rms: venv rays-other.png
 ridge.rms: venv ridge.png
 	. venv/bin/activate
 	./image-to-lands.py ridge.png TERRAIN_RIDGE 1 > $@
-	sed -i $@ -e 's/42 42/42 42\n  land_id 101/'
-	sed -i $@ -e 's/50 50/50 50\n  land_id 102/'
-	sed -i $@ -e 's/58 58/58 58\n  land_id 103/'
+	sed -i $@ -e 's/50 50/50 50\n  land_id 101/'
 
 
 teeth.rms: venv teeth.png

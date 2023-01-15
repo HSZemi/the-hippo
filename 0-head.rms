@@ -2,6 +2,8 @@
 /* created for NAC4 */
 /* by hszemi */
 
+/* Compatibility: Definitive Edition */
+
 /* use two different different herdables so that you aren't giving all sheep 70 food */
 #const HERDABLE_A 1245 /* Pig */
 #const HERDABLE_B 594 /* Sheep */
@@ -15,6 +17,8 @@
 
 /* used to explore tiles around the TC */
 #const EW_REVEALER 851 /* ES Flag */
+
+#const ON_GRID 1613
 
 #const TERRAIN_BASE 1 /* WATER */
 #const TERRAIN_INNER_MOUTH 62 /* DLC_JUNGLELEAVES */

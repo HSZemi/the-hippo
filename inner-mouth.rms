@@ -3,7 +3,8 @@ create_land
   terrain_type  TERRAIN_INNER_MOUTH
   land_position 70 30
   base_size 6
-  land_percent 25
+  land_percent 30
+  land_id 1
   assign_to_player 1
 }
 
@@ -12,6 +13,7 @@ create_land
   terrain_type  TERRAIN_INNER_MOUTH
   land_position 30 70
   base_size 6
-  land_percent 25
+  land_percent 30
+  land_id 2
   assign_to_player 2
 }
