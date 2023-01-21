@@ -7,7 +7,7 @@ def create_land(x, y, terrain_type, base_size):
     print(f'''  create_land
   {{
   terrain_type  {terrain_type}
-  land_position {x} {y}
+  land_position {x} {y} 
   base_size {base_size}
   number_of_tiles 0
   }}

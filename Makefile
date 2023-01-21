@@ -19,10 +19,10 @@ outer-body.rms: venv outer-body.png
 rays-corner.rms: venv rays-corner.png
 	. venv/bin/activate
 	./image-to-lands.py rays-corner.png TERRAIN_RAYS_CORNER 2 > $@
-	sed -i $@ -e 's/5 5/5 5\n  land_id 102/'
-	sed -i $@ -e 's/96 96/96 96\n  land_id 103/'
-	sed -i $@ -e 's/5 96/5 96\n  land_id 104/'
-	sed -i $@ -e 's/96 5/96 5\n  land_id 105/'
+	sed -i $@ -e 's/land_position 5 5 /land_position 5 5 \n  land_id 102/'
+	sed -i $@ -e 's/land_position 96 96 /land_position 96 96 \n  land_id 103/'
+	sed -i $@ -e 's/land_position 5 96 /land_position 5 96 \n  land_id 104/'
+	sed -i $@ -e 's/land_position 96 5 /land_position 96 5 \n  land_id 105/'
 
 rays-other.rms: venv rays-other.png
 	. venv/bin/activate
@@ -31,12 +31,16 @@ rays-other.rms: venv rays-other.png
 ridge.rms: venv ridge.png
 	. venv/bin/activate
 	./image-to-lands.py ridge.png TERRAIN_RIDGE 1 > $@
-	sed -i $@ -e 's/50 50/50 50\n  land_id 101/'
+	sed -i $@ -e 's/land_position 50 50 /land_position 50 50 \n  land_id 101/'
 
 
 teeth.rms: venv teeth.png
 	. venv/bin/activate
 	./image-to-lands.py teeth.png TERRAIN_TEETH 1 > $@
+	sed -i $@ -e 's/land_position 60 28 /land_position 60 28 \n  assign_to_player 2/'
+	sed -i $@ -e 's/land_position 72 40 /land_position 72 40 \n  assign_to_player 2/'
+	sed -i $@ -e 's/land_position 28 60 /land_position 28 60 \n  assign_to_player 1/'
+	sed -i $@ -e 's/land_position 40 72 /land_position 40 72 \n  assign_to_player 1/'
 
 
 2-land-generation.rms: ridge.rms teeth.rms mouth-outline.rms outer-body.rms rays-corner.rms rays-other.rms inner-mouth.rms 
@@ -50,5 +54,7 @@ venv: requirements.txt
 	pip install -r $+
 
 clean:
-	rm -rf venv
 	rm -f ridge.rms teeth.rms mouth-outline.rms outer-body.rms rays-corner.rms rays-other.rms the-hippo.rms
+ 
+ clean-venv:
+	rm -rf venv
